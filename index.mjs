@@ -17,4 +17,9 @@ app.get("/posts", (req, res) => {
     res.send(posts);
 })
 
+app.get("/posts/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    res.send(posts.find((post)=>post.id === id));
+})
+
 app.listen(4000);
